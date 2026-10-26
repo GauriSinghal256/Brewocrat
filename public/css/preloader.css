@@ -1,0 +1,124 @@
+/* Brewocrat Text-Only Preloader Styles */
+
+.handle-preloader {
+  background-color: #0c0d0f;
+  background-image: radial-gradient(circle at center, #1b1c20 0%, #08090a 100%);
+  align-items: center;
+  -webkit-align-items: center;
+  display: flex;
+  display: -ms-flexbox;
+  height: 100%;
+  justify-content: center;
+  -webkit-justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999999;
+}
+
+.preloader-close {
+  position: fixed;
+  z-index: 99999999;
+  font-size: 20px;
+  background: #e6b15f;
+  width: 34px;
+  height: 34px;
+  color: #000000;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+  right: 20px;
+  top: 20px;
+  border-radius: 50%;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.preloader-close:hover {
+  background: #ffffff;
+  transform: scale(1.1);
+}
+
+.handle-preloader .animation-preloader {
+  position: absolute;
+  z-index: 100;
+  text-align: center;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.handle-preloader .animation-preloader .txt-loading {
+  text-align: center;
+  user-select: none;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:before {
+  animation: letters-loading 3.5s infinite;
+  content: attr(data-text-preloader);
+  left: 0;
+  opacity: 0;
+  top: 0;
+  position: absolute;
+  color: #e6b15f;
+  text-shadow: 0 0 20px rgba(230, 177, 95, 0.6);
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading {
+  font-weight: 800;
+  letter-spacing: 14px;
+  display: inline-block;
+  position: relative;
+  font-size: 56px;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.2);
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+}
+
+/* Delay sequence for 9 letters B-R-E-W-O-C-R-A-T */
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(1):before { animation-delay: 0.0s; }
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(2):before { animation-delay: 0.15s; }
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(3):before { animation-delay: 0.30s; }
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(4):before { animation-delay: 0.45s; }
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(5):before { animation-delay: 0.60s; }
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(6):before { animation-delay: 0.75s; }
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(7):before { animation-delay: 0.90s; }
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(8):before { animation-delay: 1.05s; }
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(9):before { animation-delay: 1.20s; }
+
+.preloader-subtext {
+  color: #a99260;
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+@keyframes letters-loading {
+  0%, 75%, 100% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  25%, 50% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .handle-preloader .animation-preloader .txt-loading .letters-loading {
+    font-size: 28px;
+    letter-spacing: 6px;
+    line-height: 28px;
+  }
+  .preloader-subtext {
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+  }
+}
