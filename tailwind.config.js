@@ -38,6 +38,10 @@ export default {
         serif: ['Cormorant Garamond', 'Playfair Display', 'Georgia', 'serif'],
         display: ['Playfair Display', 'Cormorant Garamond', 'serif'],
         script: ['Caveat', 'cursive'],
+        alex: ['"Alex Brush"', 'cursive'],
+        vibes: ['"Great Vibes"', 'cursive'],
+        pinyon: ['"Pinyon Script"', 'cursive'],
+        cursive: ['"Alex Brush"', '"Great Vibes"', 'cursive'],
         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
       },
       backgroundImage: {

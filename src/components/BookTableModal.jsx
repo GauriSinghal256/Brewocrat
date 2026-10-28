@@ -76,7 +76,7 @@ export default function BookTableModal({ isOpen, onClose }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-[#2A1A10]/80 backdrop-blur-sm"
+            className="fixed inset-0 bg-[#0D0805]/85 backdrop-blur-md"
           />
 
           {/* Modal Container */}
@@ -84,16 +84,15 @@ export default function BookTableModal({ isOpen, onClose }) {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            
-            className="relative z-10 my-2 min-w-0 max-h-[calc(100dvh-1rem)] w-full max-w-xl overflow-y-auto overscroll-contain rounded-2xl border-2 border-[#D9A441] bg-[#2E1B0F] p-4 shadow-2xl outline outline-1 outline-[#A4452A] -outline-offset-4 sm:my-0 sm:max-h-[calc(100dvh-2rem)] sm:p-6 md:p-8"
+            className="relative z-10 my-2 min-w-0 max-h-[calc(100dvh-1rem)] w-full max-w-xl overflow-y-auto overscroll-contain rounded-3xl border border-[#D9A441]/35 bg-[#120A06] p-5 shadow-[0_25px_70px_rgba(0,0,0,0.95)] sm:my-0 sm:max-h-[calc(100dvh-2rem)] sm:p-7 md:p-8 mediterranean-pattern"
           >
             {/* Top decorative glow */}
-            <div className="absolute -top-24 -left-24 w-48 h-48 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#D9A441]/10 rounded-full blur-3xl pointer-events-none" />
 
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute right-2 top-2 z-10 p-2 text-gray-400 transition-colors hover:text-gold-400 sm:right-5 sm:top-5"
+              className="absolute right-3 top-3 z-10 p-2 text-[#E6D3B3]/60 transition-colors hover:text-[#D9A441] sm:right-5 sm:top-5"
               aria-label="Close modal"
             >
               <FaXmark className="text-xl" />
@@ -102,43 +101,43 @@ export default function BookTableModal({ isOpen, onClose }) {
             {!submitted ? (
               <div>
                 <div className="mb-4 pr-8 text-center sm:mb-6 sm:pr-0">
-                  <span className="text-xs uppercase tracking-[0.3em] text-gold-400 font-semibold">
-                    Online Reservation
-                  </span>
-                  <h3 className="mt-1 font-serif text-2xl font-bold text-white sm:text-3xl">
-                    Book A Table
+                  <div className="font-alex text-3xl sm:text-4xl text-[#EFA364] script-gold-shadow leading-tight my-1">
+                    Your table is waiting
+                  </div>
+                  <h3 className="font-serif text-2xl font-normal text-[#F7EFE0] sm:text-3xl">
+                    Instant Table Booking
                   </h3>
-                  <p className="mt-1 text-xs leading-relaxed text-gray-400 sm:text-sm">
-                    For direct assistance call <a href="tel:+917303203535" className="text-gold-400 hover:underline">+91 73032 03535</a>
+                  <p className="mt-1 text-xs leading-relaxed text-[#E6D3B3]/70">
+                    Direct inquiries: <a href="tel:+917303203535" className="text-[#D9A441] font-semibold hover:underline">+91 73032 03535</a>
                   </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="min-w-0 space-y-3 sm:space-y-4">
                   <div className="grid min-w-0 grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
                     <div>
-                      <label className="block text-xs uppercase tracking-wider text-gray-300 mb-1">Your Name</label>
+                      <label className="block text-xs uppercase tracking-wider text-[#D8C3A5] font-semibold mb-1">Your Name *</label>
                       <input
                         type="text"
                         required
-                        placeholder="John Doe"
+                        placeholder="e.g. Rahul Sharma"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full min-w-0 rounded-lg border border-[#5B3A22] bg-[#1F120B] px-4 py-3 text-sm text-white outline-none transition-all placeholder:text-gray-500 focus:border-gold-500"
+                        className="w-full min-w-0 rounded-xl border border-[#D9A441]/25 bg-[#0D0805]/90 px-4 py-3 text-sm text-[#F7EFE0] outline-none transition-all placeholder:text-[#E6D3B3]/35 focus:border-[#D9A441]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs uppercase tracking-wider text-gray-300 mb-1">Phone Number</label>
+                      <label className="block text-xs uppercase tracking-wider text-[#D8C3A5] font-semibold mb-1">Phone Number *</label>
                       <div className="relative">
                         <input
                           type="tel"
                           required
-                          placeholder="+91 73032 03535"
+                          placeholder="+91 98765 43210"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full min-w-0 rounded-lg border border-[#5B3A22] bg-[#1F120B] px-4 py-3 pr-10 text-sm text-white outline-none transition-all placeholder:text-gray-500 focus:border-gold-500"
+                          className="w-full min-w-0 rounded-xl border border-[#D9A441]/25 bg-[#0D0805]/90 px-4 py-3 pr-10 text-sm text-[#F7EFE0] outline-none transition-all placeholder:text-[#E6D3B3]/35 focus:border-[#D9A441]"
                         />
-                        <FaPhone className="absolute right-3.5 top-3 text-xs text-gray-500" />
+                        <FaPhone className="absolute right-3.5 top-3.5 text-xs text-[#D9A441]/60" />
                       </div>
                     </div>
                   </div>

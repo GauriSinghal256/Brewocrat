@@ -83,11 +83,11 @@ export default function SkybarExperienceCards({ onOpenBookModal }) {
 
                 {/* Top Tengile-Style Floating Pill Group */}
                 <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
-                  <span className="px-3.5 py-1.5 rounded-full bg-[#F7EFE0] text-[#2A1A10] text-[11px] font-bold uppercase tracking-wider shadow-md backdrop-blur-md">
+                  <span className="px-3.5 py-1.5 rounded-full bg-[#0D0805]/90 text-[#EBCB86] border border-[#D9A441]/35 text-[11px] font-bold uppercase tracking-wider shadow-md backdrop-blur-md">
                     {exp.pill}
                   </span>
 
-                  <span className="w-9 h-9 rounded-full bg-[#F7EFE0] text-[#2A1A10] flex items-center justify-center text-xs shadow-md group-hover:bg-[#D9A441] transition-colors">
+                  <span className="w-9 h-9 rounded-full bg-[#D9A441] text-[#0D0805] flex items-center justify-center text-xs shadow-md transition-colors">
                     <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-0.5" />
                   </span>
                 </div>

@@ -55,21 +55,57 @@
   --color-four: var(--color-copper);
 }
 
-/* Walnut-panelled taproom */
+/* Mediterranean dark taproom */
 .brew-wall {
-  background-color: #3A2314 !important;
+  background-color: #0D0805 !important;
+  background-image: radial-gradient(circle at 50% 0%, rgba(217, 164, 65, 0.05) 0%, transparent 60%) !important;
+}
+
+/* Cards: dark barrel wood with subtle Mediterranean copper edge */
+.brew-card {
+  background-color: #150E09 !important;
   background-image: none !important;
 }
 
-/* Cards: dark barrel wood */
-.brew-card {
-  background-color: #2E1B0F !important;
-  background-image: none !important;
+/* ==========================================================================
+   MEDITERRANEAN ARCHITECTURAL & TEXTURAL DESIGN SYSTEM
+   ========================================================================== */
+/* Subtle Moorish / Andalusian geometric star-lattice pattern overlay on dark charred espresso */
+.mediterranean-pattern {
+  background-image: radial-gradient(circle at 50% 0%, rgba(217, 164, 65, 0.07) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L40 10 L40 20 L50 20 L60 30 L50 40 L40 40 L40 50 L30 60 L20 50 L20 40 L10 40 L0 30 L10 20 L20 20 L20 10 Z' fill='none' stroke='%23D9A441' stroke-width='0.7' stroke-opacity='0.04'/%3E%3Ccircle cx='30' cy='30' r='5' fill='none' stroke='%23C76B42' stroke-width='0.5' stroke-opacity='0.045'/%3E%3C/svg%3E") !important;
+}
+
+/* Mediterranean Stucco / Plaster textured dark depth */
+.mediterranean-stucco {
+  background-color: #0D0805 !important;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(199, 107, 66, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(217, 164, 65, 0.05) 0px, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 10 L70 35 L95 45 L75 65 L80 90 L60 75 L40 90 L45 65 L25 45 L50 35 Z' fill='none' stroke='%23D9A441' stroke-width='0.5' stroke-opacity='0.03'/%3E%3C/svg%3E") !important;
+}
+
+/* Mediterranean Arched Portal Silhouette */
+.mediterranean-arch {
+  border-top-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+  box-shadow: 0 0 0 1px rgba(217, 164, 65, 0.22), 0 25px 60px -15px rgba(0, 0, 0, 0.95);
+}
+
+.mediterranean-card {
+  background: linear-gradient(180deg, #170E08 0%, #0F0804 100%) !important;
+  border: 1px solid rgba(217, 164, 65, 0.2) !important;
+  box-shadow: 0 14px 35px -10px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+.mediterranean-card:hover {
+  border-color: rgba(217, 164, 65, 0.45) !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.95), 0 0 30px rgba(217, 164, 65, 0.15) !important;
 }
 
 /* Base Body Styling with Ambient Atmospheric Lighting */
 body {
-  background-color: #3A2314 !important;
+  background-color: #0D0805 !important;
   color: var(--text-body) !important;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
@@ -112,8 +148,29 @@ body {
   font-family: 'Alex Brush', 'Great Vibes', cursive !important;
 }
 
+.font-alex {
+  font-family: 'Alex Brush', cursive !important;
+}
+
+.font-vibes {
+  font-family: 'Great Vibes', cursive !important;
+}
+
 .font-pinyon {
   font-family: 'Pinyon Script', cursive !important;
+}
+
+/* Mediterranean Script Banner — Deep Espresso with Aged Copper & Gold Glow */
+.terracotta-script-banner {
+  background: radial-gradient(ellipse at center, #26140B 0%, #150C07 60%, #0D0704 100%);
+  border-top: 1px solid rgba(217, 164, 65, 0.25);
+  border-bottom: 1px solid rgba(217, 164, 65, 0.25);
+  color: #F8DCA4;
+}
+
+.script-gold-shadow {
+  color: #EFA364;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 30px rgba(217, 164, 65, 0.35);
 }
 
 /* ==========================================================================
@@ -1145,7 +1202,7 @@ body.visible-sidebar {
 /* ==========================================================================
    MEDITERRANEAN COPPER EDITION — grain, gold details, smooth motion
    ========================================================================== */
-.bg-espresso, .bg-[#2A1A10] { background-color: #4A2C18 !important; }
+.bg-espresso, .bg-brew-dark { background-color: #4A2C18 !important; }
 html { background: #2A1A10; }
 ::selection { background: #D9A441; color: #4A2C18; }
 ::-webkit-scrollbar-track { background: #4A2C18; }
@@ -1404,79 +1461,22 @@ section.relative > div > video {
 }
 
 /* ==========================================================================
-   HOME PAGE: sections alternate wood, limewash, Aegean, sandstone, oak, olive (flat colours, no patterns)
-   2 beers · 3 experiences · 4 three moods · 5 food · 6 mixology · 7 reservation · 8 reviews
+   HOME PAGE: Strict Dark Mediterranean Palette (Zero Light Backgrounds)
    ========================================================================== */
-.home-page-editorial > section:nth-child(2) { --sec: #3A2314; --sec-card: #2A1A10; }  /* walnut wood */
-.home-page-editorial > section:nth-child(3) { --sec: #F7EFE0; --sec-card: #3A2314; }  /* limewash */
-.home-page-editorial > section:nth-child(4) { --sec: #3A2314; --sec-card: #2A1A10; }  /* walnut wood */
-.home-page-editorial > section:nth-child(5) { --sec: #EBDDC3; --sec-card: #3A2314; }  /* sandstone */
-.home-page-editorial > section:nth-child(6) { --sec: #5E3A20; --sec-card: #432816; }  /* oak barrel */
-.home-page-editorial > section:nth-child(7) { --sec: #F7EFE0; --sec-card: #3A2314; }  /* limewash, wood card */
-.home-page-editorial > section:nth-child(8) { --sec: #4F5B2E; --sec-card: #3C4723; }  /* olive grove */
-
-#craft-beers-spotlight {
-  background-color: #000000 !important;
-  padding-top: 0 !important;
-  border-top: 0 !important;
-  border-bottom: 0 !important;
+.home-page-editorial > section {
+  background-color: #0D0805 !important;
+  color: #E6D3B3 !important;
 }
 
-#craft-beers-spotlight::before,
-#craft-beers-spotlight::after {
-  display: none !important;
-}
-
-.home-page-editorial > section:nth-child(n+2) {
-  background-color: var(--sec) !important;
-  background-image: none !important;
-}
-.home-page-editorial > section:nth-child(n+2)::after { display: none !important; }
-.home-page-editorial > section:nth-child(n+2) .brew-card {
-  background-color: var(--sec-card) !important;
-  background-image: none !important;
-}
-/* cards nested inside the reservation card sit a shade darker than it */
-.home-page-editorial > section:nth-child(7) .brew-card .brew-card { background-color: #4A2C18 !important; }
-
-/* gold hairline between sections turns burgundy on cream */
-.home-page-editorial > section:is(:nth-child(3), :nth-child(5), :nth-child(7))::before {
-  background: linear-gradient(90deg, transparent, rgba(164,69,42,.45), transparent) !important;
-}
-
-/* Cream sections with free-standing text (food plates, reservation): dark text, burgundy accents.
-   Anything inside a burgundy card keeps its light text. */
-.light-section-heading,
-.light-section-heading * {
-  color: #2A1A10 !important;
-  -webkit-text-fill-color: #2A1A10 !important;
-  background: none !important;
-}
-.home-page-editorial > section:is(:nth-child(3), :nth-child(5), :nth-child(7)) h2[class*="text-[#1A1A1A]"] {
-  color: #1A1A1A !important;
-}
-.home-page-editorial > section:is(:nth-child(5), :nth-child(7)) { color: #1A1A1A; }
-.home-page-editorial > section:is(:nth-child(5), :nth-child(7)) :is(h1, h2, h3, h4, h5, h6):not(.brew-card *) {
-  color: #2A1A10 !important;
-}
-.home-page-editorial > section:is(:nth-child(5), :nth-child(7)) [class*="text-[#F7EFE0]"]:not(.brew-card *) { color: #1A1A1A !important; }
-.home-page-editorial > section:is(:nth-child(5), :nth-child(7)) :is([class*="text-[#E6D3B3]"], [class*="text-[#D8C3A5]"], [class*="text-[#C2AA8A]"]):not(.brew-card *) { color: #4A2A2A !important; }
-.home-page-editorial > section:is(:nth-child(5), :nth-child(7)) :is([class*="text-[#D9A441]"], [class*="text-[#B07A2E]"], [class*="text-[#EBCB86]"]):not(.brew-card *) {
-  color: #A4452A !important;
-  background: none !important; -webkit-text-fill-color: #A4452A !important; filter: none !important; animation: none !important;
-}
-.home-page-editorial > section:is(:nth-child(5), :nth-child(7)) .pill-btn-outline:not(.brew-card *) {
-  background: #A4452A !important; border-color: #A4452A !important; color: #F7EFE0 !important;
-}
-.home-page-editorial > section:is(:nth-child(5), :nth-child(7)) .pill-btn-outline:not(.brew-card *):hover {
-  background: #D9A441 !important; border-color: #D9A441 !important; color: #2A1A10 !important;
+.home-page-editorial > section .brew-card {
+  background-color: #120A06 !important;
 }
 
 /* Keep the Moments section on the dark Brewocrat palette. */
 #experience-slats {
-  --sec: #2E1B0F !important;
-  --sec-card: #2A1A10 !important;
-  background-color: #160D08 !important;
+  --sec: #0D0805 !important;
+  --sec-card: #120A06 !important;
+  background-color: #0D0805 !important;
   background-image: none !important;
   color: #E6D3B3 !important;
   border-top: 0 !important;
@@ -1509,7 +1509,7 @@ section.relative > div > video {
 }
 
 #universes {
-  background-color: #2E1B0F !important;
+  background-color: #0D0805 !important;
   background-image: none !important;
   border-top: 0 !important;
   margin-top: 0 !important;
@@ -1522,7 +1522,7 @@ section.relative > div > video {
 }
 
 #editorial-reservation {
-  background: #2E1B0F !important;
+  background: #0D0805 !important;
   background-image: none !important;
   color: #E6D3B3 !important;
   border-top: 0 !important;

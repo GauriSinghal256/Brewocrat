@@ -40,14 +40,6 @@ export default function EditorialTestimonials() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#160D08]/84 via-[#160D08]/92 to-[#160D08]/96" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        
-        {/* Suptitle */}
-        <div className="inline-flex items-center gap-2 mb-4">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#D9A441] font-semibold">
-            06 / Patron Voices
-          </span>
-        </div>
-
         {/* Rating Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full brew-card border border-[#D9A441]/30 mb-8">
           <div className="flex text-[#D9A441] text-xs">

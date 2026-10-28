@@ -277,7 +277,7 @@ export default function Brewhouse({ onOpenBookModal }) {
                 alt={currentTap.name}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#4A2C18] via-transparent to-transparent opacity-70" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0503] via-transparent to-transparent opacity-80" />
             </div>
           </div>
 

@@ -106,25 +106,31 @@ export default function FoodPlatesSeriesShowcase({ onOpenBookModal }) {
   };
 
   return (
-    <section id="food-plates-series" className="relative pb-2 pt-8 sm:pb-4 sm:pt-10 brew-wall text-[#F7EFE0] overflow-hidden select-none border-t border-b border-[#D9A441]/15">
+    <section id="food-plates-series" className="relative pb-8 pt-5 sm:pb-12 sm:pt-8 bg-[#0D0805] text-[#F7EFE0] overflow-hidden select-none border-t border-b border-[#D9A441]/15 mediterranean-stucco">
       
       {/* Background Ambient Lighting */}
-      <div className="absolute inset-0 bg-[#160C06]/20 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] pointer-events-none" />
-      <div className="absolute -top-32 right-1/4 w-80 h-80 bg-[#B07A2E]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-[#160C06]/30 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-[#D9A441]/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* 3-Plate Series Stage (Matching User Reference Image 2: Plate on left, Center plate, Plate on right) */}
-        <div className="relative w-full max-w-5xl mx-auto flex items-center justify-center min-h-[260px] sm:min-h-[320px] md:min-h-[360px] my-0">
+        {/* Section Flow Header */}
+        <div className="text-center max-w-2xl mx-auto mb-2 sm:mb-3">
+          <div className="font-alex text-3xl sm:text-5xl text-[#EFA364] script-gold-shadow leading-tight select-none">
+            Wood-fired & claypot feasts
+          </div>
+        </div>
+        
+        {/* 3-Plate Series Stage: Generous Size and Unboxed on Mobile */}
+        <div className="relative w-full max-w-5xl mx-auto flex items-center justify-center min-h-[300px] sm:min-h-[340px] md:min-h-[380px] my-0 overflow-hidden sm:overflow-visible">
           
           {/* Left Plate (Gliding out / Previous in series) */}
           <div
             onClick={handlePrev}
-            className="absolute left-0 sm:left-4 md:left-8 -translate-x-1/4 sm:translate-x-0 cursor-pointer z-10 opacity-35 hover:opacity-70 transition-all duration-500 scale-75 sm:scale-80 blur-[0.5px] hover:blur-none"
+            className="absolute left-0 sm:left-4 md:left-8 -translate-x-1/3 sm:translate-x-0 cursor-pointer z-10 opacity-25 sm:opacity-40 hover:opacity-70 transition-all duration-500 scale-75 sm:scale-80 blur-[0.5px] hover:blur-none"
             title={`Previous: ${prevDish.title}`}
           >
-            <div className="relative w-44 sm:w-56 md:w-64 aspect-square rounded-full overflow-hidden shadow-2xl border-2 border-[#D9A441]/20">
+            <div className="relative w-44 sm:w-56 md:w-64 aspect-square rounded-full overflow-hidden shadow-2xl border-2 border-[#D9A441]/25">
               <img
                 src={prevDish.image}
                 alt={prevDish.title}
@@ -133,11 +139,11 @@ export default function FoodPlatesSeriesShowcase({ onOpenBookModal }) {
                   e.target.src = '/images/special-dish1.png';
                 }}
               />
-              <div className="absolute inset-0 bg-[#2A1A10]/40 rounded-full" />
+              <div className="absolute inset-0 bg-[#0A0503]/50 rounded-full" />
             </div>
           </div>
 
-          {/* Center Plate: The Hero Plate in Spotlight */}
+          {/* Center Plate: The Hero Plate in Spotlight (Larger on Mobile) */}
           <AnimatePresence mode="popLayout">
             <motion.div
               key={currentDish.id}
@@ -148,15 +154,15 @@ export default function FoodPlatesSeriesShowcase({ onOpenBookModal }) {
               className="relative z-20 flex flex-col items-center justify-center"
             >
               {/* Golden Ambient Halo */}
-              <div className="absolute inset-0 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 rounded-full bg-gradient-to-tr from-[#D9A441]/20 via-[#B07A2E]/15 to-transparent blur-2xl -z-10 pointer-events-none" />
+              <div className="absolute inset-0 w-72 sm:w-80 md:w-96 h-72 sm:h-80 md:h-96 rounded-full bg-gradient-to-tr from-[#D9A441]/25 via-[#B07A2E]/15 to-transparent blur-2xl -z-10 pointer-events-none" />
 
               {/* The Photorealistic Round Plate */}
-              <div className="relative w-56 sm:w-72 md:w-84 lg:w-96 aspect-square rounded-full p-1.5 bg-gradient-to-br from-[#D9A441]/40 via-[#4A2C18] to-[#D9A441]/20 shadow-[0_25px_60px_rgba(42,26,16,0.95)]">
-                <div className="w-full h-full rounded-full overflow-hidden brew-card">
+              <div className="relative w-64 sm:w-72 md:w-84 lg:w-96 aspect-square rounded-full p-1.5 bg-gradient-to-br from-[#D9A441]/50 via-[#241309] to-[#D9A441]/25 shadow-[0_25px_60px_rgba(0,0,0,0.95)]">
+                <div className="w-full h-full rounded-full overflow-hidden bg-[#0A0503]">
                   <img
                     src={currentDish.image}
                     alt={currentDish.title}
-                    className="w-full h-full object-cover filter drop-shadow-[0_15px_30px_rgba(42,26,16,0.9)]"
+                    className="w-full h-full object-cover filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)]"
                     onError={(e) => {
                       e.target.src = '/images/special-dish1.png';
                     }}
@@ -170,10 +176,10 @@ export default function FoodPlatesSeriesShowcase({ onOpenBookModal }) {
           {/* Right Plate (Gliding in / Next in series) */}
           <div
             onClick={handleNext}
-            className="absolute right-0 sm:right-4 md:right-8 translate-x-1/4 sm:translate-x-0 cursor-pointer z-10 opacity-35 hover:opacity-70 transition-all duration-500 scale-75 sm:scale-80 blur-[0.5px] hover:blur-none"
+            className="absolute right-0 sm:right-4 md:right-8 translate-x-1/3 sm:translate-x-0 cursor-pointer z-10 opacity-25 sm:opacity-40 hover:opacity-70 transition-all duration-500 scale-75 sm:scale-80 blur-[0.5px] hover:blur-none"
             title={`Next: ${nextDish.title}`}
           >
-            <div className="relative w-44 sm:w-56 md:w-64 aspect-square rounded-full overflow-hidden shadow-2xl border-2 border-[#D9A441]/20">
+            <div className="relative w-44 sm:w-56 md:w-64 aspect-square rounded-full overflow-hidden shadow-2xl border-2 border-[#D9A441]/25">
               <img
                 src={nextDish.image}
                 alt={nextDish.title}
@@ -182,14 +188,14 @@ export default function FoodPlatesSeriesShowcase({ onOpenBookModal }) {
                   e.target.src = '/images/special-dish1.png';
                 }}
               />
-              <div className="absolute inset-0 bg-[#2A1A10]/40 rounded-full" />
+              <div className="absolute inset-0 bg-[#0A0503]/50 rounded-full" />
             </div>
           </div>
 
           {/* Prev / Next Floating Navigation Arrows */}
           <button
             onClick={handlePrev}
-            className="absolute left-2 sm:left-12 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#2A1A10]/80 hover:bg-[#4A2C18] border border-[#D9A441]/35 hover:border-[#D9A441] text-[#E6D3B3] hover:text-[#D9A441] backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-2xl cursor-pointer hover:scale-105"
+            className="absolute left-1.5 sm:left-12 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-13 sm:h-13 rounded-full bg-[#0D0805]/90 hover:bg-[#150E09] border border-[#D9A441]/40 text-[#E6D3B3] hover:text-[#D9A441] backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-2xl cursor-pointer hover:scale-105"
             aria-label="Previous plate"
           >
             <FaChevronLeft className="text-sm -ml-0.5" />
@@ -197,7 +203,7 @@ export default function FoodPlatesSeriesShowcase({ onOpenBookModal }) {
 
           <button
             onClick={handleNext}
-            className="absolute right-2 sm:right-12 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#2A1A10]/80 hover:bg-[#4A2C18] border border-[#D9A441]/35 hover:border-[#D9A441] text-[#E6D3B3] hover:text-[#D9A441] backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-2xl cursor-pointer hover:scale-105"
+            className="absolute right-1.5 sm:right-12 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-13 sm:h-13 rounded-full bg-[#0D0805]/90 hover:bg-[#150E09] border border-[#D9A441]/40 text-[#E6D3B3] hover:text-[#D9A441] backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-2xl cursor-pointer hover:scale-105"
             aria-label="Next plate"
           >
             <FaChevronRight className="text-sm ml-0.5" />

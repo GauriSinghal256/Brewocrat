@@ -191,7 +191,7 @@ export default function PartiesAndCorporate({ onOpenBookModal }) {
       {/* 1. Hero Header */}
       <section className="relative py-24 sm:py-32 brew-wall overflow-hidden border-b border-[#D9A441]/20">
         <img src="/interior/exterior.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-35" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2A1A10]/65 via-[#2A1A10]/80 to-[#2A1A10]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0D0805]/75 via-[#0D0805]/85 to-[#0D0805]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full brew-card border border-[#D9A441]/30">
             <span className="w-2 h-2 rounded-full bg-[#D9A441] animate-ping" />
@@ -213,7 +213,7 @@ export default function PartiesAndCorporate({ onOpenBookModal }) {
           <div className="flex flex-wrap justify-center items-center gap-4">
             <a
               href="#party-wizard"
-              className="px-7 py-3.5 rounded-full bg-[#D9A441] text-[#2A1A10] font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-[0_5px_25px_rgba(217,164,65,0.35)]"
+              className="px-7 py-3.5 rounded-full bg-[#D9A441] text-[#0D0805] font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-[0_5px_25px_rgba(217,164,65,0.35)]"
             >
               Instant Party Cost Calculator
             </a>
@@ -248,12 +248,12 @@ export default function PartiesAndCorporate({ onOpenBookModal }) {
             return (
               <div
                 key={pkg.id}
-                className={`overflow-hidden rounded-3xl bg-[#2A1A10]/90 p-7 sm:p-8 border ${pkg.color} flex flex-col justify-between relative transition-all duration-300 hover:-translate-y-1 backdrop-blur-md`}
+                className={`overflow-hidden rounded-3xl bg-[#140C07]/90 p-7 sm:p-8 border ${pkg.color} flex flex-col justify-between relative transition-all duration-300 hover:-translate-y-1 backdrop-blur-md`}
               >
                 <img src={pkg.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-20" />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#2A1A10]/75 via-[#2A1A10]/85 to-[#2A1A10]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#140C07]/80 via-[#100804]/90 to-[#0A0503]" />
                 {pkg.featured && (
-                  <span className="absolute left-1/2 top-2 z-10 -translate-x-1/2 px-3 py-1 rounded-full bg-[#D9A441] text-[#2A1A10] text-[10px] font-black uppercase tracking-widest shadow-lg">
+                  <span className="absolute left-1/2 top-2 z-10 -translate-x-1/2 px-3 py-1 rounded-full bg-[#D9A441] text-[#0D0805] text-[10px] font-black uppercase tracking-widest shadow-lg">
                     Most Popular
                   </span>
                 )}

@@ -225,7 +225,7 @@ export default function Preloader() {
             <FaXmark />
           </button>
 
-          <svg viewBox="30 0 240 440" className="relative h-auto w-[min(54vw,230px)] md:w-[260px]" aria-hidden="true">
+          <svg viewBox="30 0 240 440" className="relative h-auto w-[min(42vw,185px)] md:w-[240px]" aria-hidden="true">
             <defs>
               <linearGradient id="plBrass" x1="0" x2="1">
                 <stop offset="0" stopColor="#59390F" /><stop offset=".22" stopColor="#C79B45" /><stop offset=".42" stopColor="#F8E3A0" />

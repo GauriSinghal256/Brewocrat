@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { FaPlay, FaPause, FaArrowRight } from 'react-icons/fa6';
+import { FaPlay, FaPause } from 'react-icons/fa6';
 
 /* ------------------------------------------------------------------ */
 /*  Beer data                                                          */
@@ -308,7 +308,7 @@ export default function CraftBeersShowcaseOneByOne({ onOpenBookModal }) {
     <section
       id="craft-beers-spotlight"
       ref={sectionRef}
-      className="relative w-full brew-card text-[#F7EFE0] overflow-hidden border-t border-b border-[#D9A441]/15"
+      className="relative w-full bg-[#0D0805] text-[#F7EFE0] overflow-hidden border-t border-b border-[#D9A441]/15 mediterranean-pattern"
     >
       <style>{`
         @keyframes btsRise{0%{transform:translateY(0);opacity:0}12%{opacity:.85}88%{opacity:.45}100%{transform:translateY(-128px);opacity:0}}
@@ -342,16 +342,16 @@ export default function CraftBeersShowcaseOneByOne({ onOpenBookModal }) {
         style={{ background: `radial-gradient(ellipse 55% 45% at 50% 42%, ${mugBeer.accent} 0%, transparent 72%)` }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 pt-14 sm:pt-20 pb-10 sm:pb-14">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="font-serif text-3xl sm:text-5xl text-[#F7EFE0] font-normal leading-tight">
-            Four taps. Poured to the brim.
+      <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-4 pt-3 sm:pt-8 pb-4 sm:pb-8">
+        {/* Header: Pure Visual Focus */}
+        <div className="text-center max-w-2xl mx-auto mb-1 sm:mb-3 px-2">
+          <h2 className="font-alex text-2xl xs:text-3xl sm:text-5xl text-[#EFA364] script-gold-shadow leading-tight my-1 select-none">
+            Four Signature Drafts. Poured Fresh.
           </h2>
         </div>
 
         {/* ---------------- Stage ---------------- */}
-        <div className="relative mt-4 sm:mt-6 mx-auto w-[88%] max-w-[650px] select-none">
+        <div className="relative mt-2 sm:mt-6 mx-auto w-[85%] sm:w-full max-w-[330px] sm:max-w-[520px] md:max-w-[700px] select-none">
           <svg
             ref={svgRef}
             viewBox={narrow ? '0 20 420 590' : '0 20 800 590'}
@@ -672,47 +672,6 @@ export default function CraftBeersShowcaseOneByOne({ onOpenBookModal }) {
               {isPlaying ? <FaPause className="text-[9px]" /> : <FaPlay className="text-[9px] ml-0.5" />}
             </button>
           </div>
-        </div>
-
-        {/* ---------------- Tap list ---------------- */}
-        <div className="mt-6 grid grid-cols-2 items-stretch gap-2.5 sm:grid-cols-4 sm:gap-3 max-w-3xl mx-auto">
-          {BEERS.map((b, i) => {
-            const active = i === idx;
-            return (
-              <button
-                key={b.id}
-                type="button"
-                onClick={() => select(i)}
-                aria-pressed={active}
-                className={`relative flex h-full min-h-[70px] flex-col justify-center overflow-hidden rounded-xl border p-3 text-center transition-all duration-300 cursor-pointer ${
-                  active
-                    ? 'bg-[#2E1B0F] border-[#D9A441] shadow-[0_4px_20px_rgba(217,164,65,0.2)]'
-                    : 'bg-[#2A1A10]/70 border-[#D9A441]/20 hover:border-[#D9A441]/50 hover:bg-[#4A2C18]'
-                }`}
-              >
-                {active && isPlaying && inView && !reduced && (
-                  <span
-                    key={`${idx}-${run}`}
-                    className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-[#D9A441] to-[#F7EFE0]"
-                    style={{ animation: `btsProg ${CYCLE_MS}ms linear forwards` }}
-                  />
-                )}
-                <span className={`flex min-h-8 items-center justify-center text-xs font-bold uppercase leading-tight tracking-wide sm:text-sm ${active ? 'text-[#F7EFE0]' : 'text-[#D8C3A5]'}`}>
-                  {b.title}
-                </span>
-                <span className="mt-1 block text-[11px] text-[#D9A441]/80">{b.abv} ABV</span>
-              </button>
-            );
-          })}
-        </div>
-
-        <div className="mt-8 flex justify-center">
-          <button type="button" onClick={onOpenBookModal} className="pill-btn-primary group cursor-pointer justify-center">
-            <span>Reserve a table to taste</span>
-            <span className="pill-icon-circle">
-              <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-0.5" />
-            </span>
-          </button>
         </div>
       </div>
     </section>
